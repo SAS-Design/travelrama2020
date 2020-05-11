@@ -25,7 +25,9 @@ namespace :lint do
     desc 'Check for security warnings'
 
     result = Brakeman.run app_path: '.', ignore_file: './.brakeman.ignore', print_report: true, pager: nil
-    exit Brakeman::Warnings_Found_Exit_Code unless result.filtered_warnings.empty?
+    unless result.filtered_warnings.empty?
+      exit Brakeman::Warnings_Found_Exit_Code
+    end
   end
 end
 

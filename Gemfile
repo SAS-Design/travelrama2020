@@ -22,7 +22,7 @@ gem 'friendly_id'
 # Rails - user authentication
 gem 'devise', github: 'plataformatec/devise'
 # Rails - activerecord database
-gem 'mysql2'
+gem 'sqlite3'
 # Rails - spreadsheet parsing
 gem 'spreadsheet'
 # Rails - generate ActiveStorage variants
@@ -70,9 +70,9 @@ gem 'jbuilder'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Internationalization
-gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'i18n-tasks'
+gem 'rails-i18n'
 
 group :production, :staging do
   # Web server

@@ -1,0 +1,9 @@
+welcome to travelrama 2020
+
+= form_with model: Game.new, local: true do |form|
+  = form.label 'Find or create session'
+  = form.text_field :name
+  = form.label 'Password (optional)'
+  = form.text_field :password
+  = form.submit
+

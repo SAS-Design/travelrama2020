@@ -21,7 +21,9 @@ Rake::Task['docs:yard'].enhance do
 
   RailsERD.load_tasks
   version = `git describe --tags --always`
-  puts "Version bumped to #{version}" if Rails.root.join('config', 'version').open('w') { |file| file.write version }.positive?
+  if Rails.root.join('config', 'version').open('w') { |file| file.write version }.positive?
+    puts "Version bumped to #{version}"
+  end
 end
 
 task docs: :environment do
