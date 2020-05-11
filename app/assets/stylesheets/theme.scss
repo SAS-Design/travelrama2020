@@ -1,0 +1,23 @@
+$red: #f1592a;
+$yellow: #fca638;
+$green: #006600;
+$cyan: #17a2b8;
+$purple: #872384;
+$gray: #777777;
+
+$theme-colors: (
+  primary: $purple,
+  secondary: $gray,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red
+);
+
+.fill-primary {background-color: $purple}
+.fill-secondary {background-color: $gray}
+.fill-success {background-color: $green}
+.fill-info {background-color: $cyan}
+.fill-warning {background-color: $yellow}
+.fill-danger {background-color: $red}
+.fill-nocolor {background-color: inherit}

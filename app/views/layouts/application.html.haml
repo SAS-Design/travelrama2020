@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title= title = yield(:title).present? ? yield(:title) : "Travelrama"
+    = render 'meta', title: title, description: yield(:description)
+
+    = csrf_meta_tags
+    = csp_meta_tag
+    %link{rel: "manifest", href: 'manifest.json'}
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render 'nav'
+    = yield
+    = render 'footer'

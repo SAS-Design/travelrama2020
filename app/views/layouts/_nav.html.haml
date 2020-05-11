@@ -1,0 +1,6 @@
+%header
+  .col-6
+    %a{href: '/'}
+      %picture
+        %source{srcset: image_path('logo_dark.png'), media: "(prefers-color-scheme: dark)"}
+        = image_tag('logo.png', alt: "Home", title: "Travelrama logo", id: "banner")

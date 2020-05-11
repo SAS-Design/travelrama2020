@@ -1,0 +1,9 @@
+-o docs 
+-r README.md 
+--protected 
+--private 
+--template-path docsrc/templates
+'app/**/*.rb'
+'lib/**/*.rb'
+'db/schema.rb' -
+docsrc/files/**/*.md
