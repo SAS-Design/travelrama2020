@@ -2,30 +2,28 @@
 
 class Game < ApplicationRecord
   validates :name, presence: true
-  validate :state_structure
+  # validate :state_structure
+  auto_strip_attributes :name, :password
   after_initialize :setup
 
-  def parsed_state
-    @parsed_state ||= (state || {}).with_indifferent_access
+  def state
+    @state ||= (super || {}).with_indifferent_access
   end
 
   def setup
-    players = []
-    postcards = City.all.map(&:postcards).flatten
-    4.times { players << Player.setup(postcards) }
+    return unless state.empty?
+    
     self[:state] = {
-      postcards: postcards,
+      postcards: postcards = City.all.map(&:postcards).flatten,
       hazards: Game.setup_hazards,
-      players: players
+      players: (1..4).map { |n| {"player#{n}" => Player.setup(postcards)} }
     }
   end
 
   private
 
   def state_structure
-    unless parsed_state[:postcards].nil? || parsed_state[:hazards].nil? || parsed_state[:players].nil?
-      return
-    end
+    return unless state[:postcards].nil? || state[:hazards].nil? || state[:players].nil?
 
     errors.add(:state, 'is malformed')
   end

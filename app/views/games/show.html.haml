@@ -1,1 +1,22 @@
-= @game.state
+%h1 Game
+#players-pane
+  - @game.state[:players].each do |player|
+    .player-detail{style:"margin:5px"}
+      %h2= player.keys.first
+      - values = player.values[0]
+      %h3
+        Postcards: 
+        = values[:inventory][:postcards].size
+        \/ 5
+        .postcards
+          - values[:inventory][:postcards].each do |postcard|
+            = postcard
+      %h3
+        Miles: 
+        = values[:inventory][:miles]
+        - if values[:inventory][:tickets].positive?
+          and 
+          = pluralize values[:inventory][:tickets], 'airplane ticket'
+
+#board
+  A map goes here

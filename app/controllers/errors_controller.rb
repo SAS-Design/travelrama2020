@@ -2,7 +2,6 @@
 
 # Handles errors
 class ErrorsController < ApplicationController
-  respond_to :html
 
   # 401
   def unauthorized

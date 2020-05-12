@@ -15,20 +15,14 @@ gem 'puma'
 gem 'auto_strip_attributes'
 # Rails - file upload validation
 gem 'activestorage-validator'
-# Rails - pagination
-gem 'will_paginate'
 # Rails - readable URLS
 gem 'friendly_id'
-# Rails - user authentication
-gem 'devise', github: 'plataformatec/devise'
 # Rails - activerecord database
 gem 'sqlite3'
 # Rails - spreadsheet parsing
 gem 'spreadsheet'
 # Rails - generate ActiveStorage variants
 gem 'mini_magick'
-# Rails - custom association ordering
-gem 'order_as_specified'
 # HTML - shorthand
 gem 'haml-rails'
 # CSS - shorthand
@@ -49,10 +43,6 @@ gem 'jquery-ui-rails'
 # JS - turbolinks (simulated page loads from cache)
 gem 'turbolinks'
 # JS - text editor for text areas
-gem 'tinymce-rails'
-# JS - nested form helper
-gem 'nested_form_fields'
-# JS - chart generation
 gem 'chartkick'
 # JS - service worker
 gem 'serviceworker-rails'
@@ -70,7 +60,6 @@ gem 'jbuilder'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Internationalization
-gem 'devise-i18n'
 gem 'i18n-tasks'
 gem 'rails-i18n'
 

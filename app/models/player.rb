@@ -5,10 +5,12 @@ class Player
     {
       starting_city_id: nil,
       current_location: nil,
-      miles: 500,
-      tickets: 0,
       goal: postcards.first(3) + Tag.first(2), # Specific postcards need to be 'drawn' so no two players have the same 1 postcard goal.
-      inventory: []
+      inventory: {
+        postcards: [],
+        miles: 500,
+        tickets: 0
+      }
     }
   end
 end
